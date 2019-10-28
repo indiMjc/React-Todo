@@ -39,13 +39,17 @@ class App extends React.Component {
     });
   };
 
-  editTodo = e => this.setState({ [e.target.name]: e.target.value });
+  changeTodo = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
     return (
       <div>
         <TodoList todo={this.state.todos} />
-        <TodoForm />
+        <TodoForm
+          value={this.state.todo}
+          handleChangeTodo={this.changeTodo}
+          handleAddTodo={this.addTodo}
+        />
       </div>
     );
   }
