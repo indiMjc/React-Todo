@@ -41,10 +41,15 @@ class App extends React.Component {
 
   changeTodo = e => this.setState({ [e.target.name]: e.target.value });
 
+  toggleComplete = () => console.log("completed");
+
   render() {
     return (
       <div>
-        <TodoList todo={this.state.todos} />
+        <TodoList
+          todo={this.state.todos}
+          handleToggleComplete={this.toggleComplete}
+        />
         <TodoForm
           value={this.state.todo}
           handleChangeTodo={this.changeTodo}

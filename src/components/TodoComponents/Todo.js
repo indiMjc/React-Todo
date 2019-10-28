@@ -1,7 +1,9 @@
 import React from "react";
 
 const Todo = props => {
-  return <>{props.todo.task}</>;
+  return (
+    <div onClick={() => props.handleToggleComplete()}>{props.todo.task}</div>
+  );
 };
 
 export default Todo;
