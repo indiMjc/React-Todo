@@ -38,8 +38,8 @@ class App extends React.Component {
   changeTodo = e => this.setState({ [e.target.name]: e.target.value });
 
   toggleComplete = id => {
-    let todos = this.state.todos.slice();
-    todos = todos.map(todo => {
+    let todos = [...this.state.todos];
+    todos.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
         return todo;
