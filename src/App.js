@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./components/TodoComponents/TodoList";
 import TodoForm from "./components/TodoComponents/TodoForm";
+import "./styling.css";
 
 class App extends React.Component {
   constructor() {
@@ -22,6 +23,10 @@ class App extends React.Component {
     };
   }
 
+  // let todoState = this.state.todos;
+  //
+  // is there a place I can declare a variable like this to keep code dry?
+
   addTodo = e => {
     e.preventDefault();
     const newTodo = {
@@ -40,9 +45,7 @@ class App extends React.Component {
   toggleComplete = id => {
     let todos = [...this.state.todos];
     //
-    //
     //  why can't I just do this.state.todos.map() below?
-    //
     //
     todos.map(todo => {
       if (todo.id === id) {
@@ -63,7 +66,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="main-contain">
         <TodoList
           todo={this.state.todos}
           toggleComplete={this.toggleComplete}
