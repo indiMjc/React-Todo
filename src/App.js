@@ -39,6 +39,11 @@ class App extends React.Component {
 
   toggleComplete = id => {
     let todos = [...this.state.todos];
+    //
+    //
+    //  why can't I just do this.state.todos.map() below?
+    //
+    //
     todos.map(todo => {
       if (todo.id === id) {
         todo.completed = !todo.completed;
@@ -61,13 +66,13 @@ class App extends React.Component {
       <div>
         <TodoList
           todo={this.state.todos}
-          handleToggleComplete={this.toggleComplete}
+          toggleComplete={this.toggleComplete}
         />
         <TodoForm
           value={this.state.todo}
-          handleChangeTodo={this.changeTodo}
-          handleAddTodo={this.addTodo}
-          handleClearComplete={this.clearComplete}
+          changeTodo={this.changeTodo}
+          addTodo={this.addTodo}
+          clearComplete={this.clearComplete}
         />
       </div>
     );

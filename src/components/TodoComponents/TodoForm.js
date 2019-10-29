@@ -4,16 +4,16 @@ const TodoForm = props => {
   return (
     <form>
       <input
-        onChange={props.handleChangeTodo}
+        onChange={props.changeTodo}
         type="text"
         name="todo"
         value={props.value}
         placeholder="Enter todo item"
       />
       <br />
-      <button onClick={props.handleAddTodo}>Submit</button>
+      <button onClick={props.addTodo}>Submit</button>
       <br />
-      <button onClick={props.handleClearComplete}>Clear completed items</button>
+      <button onClick={props.clearComplete}>Clear completed items</button>
     </form>
   );
 };
